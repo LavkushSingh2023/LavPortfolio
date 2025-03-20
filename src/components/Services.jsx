@@ -28,7 +28,7 @@ const services = [
 const Services = () => {
   return (
     <section id="services" className="py-20 bg-gray-50 dark:bg-gray-900 px-6">
-      <div className="max-w-6xl mx-auto text-center">
+      <div className="max-w-7xl mx-auto text-center">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}

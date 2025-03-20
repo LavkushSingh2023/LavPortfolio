@@ -22,14 +22,22 @@ const Hero = () => {
           </p>
           
           <div className="flex justify-center md:justify-start gap-4">
-            <button className="bg-gradient-to-r from-blue-600 to-purple-500 text-white px-8 py-3 rounded-lg shadow-md hover:opacity-90 transition-opacity flex items-center gap-2">
+            <button onClick={() => {
+                        const link = document.createElement("a");
+                        link.href = "/LavResume.pdf"; // File path in `public/`
+                        link.download = "My_Resume.pdf"; // Suggested filename
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+                    }}
+                className="bg-gradient-to-r from-blue-600 to-purple-500 text-white px-8 py-3 rounded-lg shadow-md hover:cursor-pointer hover:opacity-90 transition-opacity flex items-center gap-2">
               <FiFileText /> Download CV
             </button>
             <div className="flex gap-3">
-              <a href="#" className="p-3 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors shadow-md">
+              <a href="https://github.com/LavkushSingh2023" className="p-3 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors shadow-md">
                 <FiGithub className="text-xl" />
               </a>
-              <a href="#" className="p-3 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors shadow-md">
+              <a href="https://www.linkedin.com/in/lavkushsingh2023/" className="p-3 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors shadow-md">
                 <FiLinkedin className="text-xl" />
               </a>
             </div>
@@ -51,7 +59,7 @@ const Hero = () => {
               className="absolute inset-0 border-4 border-blue-600/20 rounded-full"
             />
             <img
-              src="/profile-placeholder.jpg"
+              src="/LavPhoto.jpg"
               alt="Profile"
               className="relative z-10 w-full h-full object-cover rounded-full border-4 border-white/20 dark:border-gray-800/20"
             />

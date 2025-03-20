@@ -33,7 +33,7 @@ const Contact = () => {
 
   return (
     <section id="contact" className="py-20 px-6 bg-gray-50 dark:bg-gray-900">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         {/* Left - Contact Info */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
@@ -55,10 +55,10 @@ const Contact = () => {
               <FiPhone className="text-blue-500" /> +91 930 518 7061
             </p>
             <div className="flex gap-6 justify-center md:justify-start mt-4">
-              <a href="#" className="text-gray-800 dark:text-gray-300 hover:text-blue-500 transition">
+              <a href="https://github.com/LavkushSingh2023" className="text-gray-800 dark:text-gray-300 hover:text-blue-500 transition">
                 <FiGithub size={24} />
               </a>
-              <a href="#" className="text-gray-800 dark:text-gray-300 hover:text-blue-500 transition">
+              <a href="https://www.linkedin.com/in/lavkushsingh2023" className="text-gray-800 dark:text-gray-300 hover:text-blue-500 transition">
                 <FiLinkedin size={24} />
               </a>
             </div>

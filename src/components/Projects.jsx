@@ -1,55 +1,11 @@
 import { motion } from "framer-motion";
 import { FiGithub, FiExternalLink, FiFileText } from "react-icons/fi";
-
-const projects = [
-  {
-    title: "E-Commerce Platform",
-    description:
-      "A robust full-stack shopping solution with real-time inventory management and seamless payment integration.",
-    tech: ["React", "Node.js", "MongoDB", "Stripe"],
-    image: "/project1.jpg",
-    github: "#",
-    live: "#",
-    caseStudy: "#",
-  },
-  {
-    title: "Task Management System",
-    description:
-      "A collaborative project management tool featuring AI integration to boost productivity.",
-    tech: ["Next.js", "TypeScript", "PostgreSQL", "AWS"],
-    image: "/project2.jpg",
-    github: "#",
-    live: "#",
-    caseStudy: "#",
-  },
-  {
-    title: "Portfolio Website",
-    description:
-      "A personal portfolio showcasing projects and skills with modern design and animations.",
-    tech: ["React", "Tailwind CSS", "Framer Motion"],
-    image: "/project3.jpg",
-    github: "#",
-    live: "#",
-    caseStudy: "#",
-  },
-  {
-    title: "Blog Platform",
-    description:
-      "A full-featured blogging platform with user authentication, CMS, and real-time notifications.",
-    tech: ["Gatsby", "GraphQL", "Contentful"],
-    image: "/project4.jpg",
-    github: "#",
-    live: "#",
-    caseStudy: "#",
-  },
-];
+import { projects } from "../data/projects";
+import { Link } from "react-router-dom";
 
 const Projects = () => {
   return (
-    <section
-      id="projects"
-      className="py-20 bg-gray-50 dark:bg-gray-900 px-6"
-    >
+    <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-900 px-6">
       <div className="max-w-7xl mx-auto text-center">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
@@ -78,7 +34,7 @@ const Projects = () => {
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-30 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-opacity-50 group-hover:bg-opacity-30 transition-opacity duration-500" />
               </div>
 
               <div className="p-6">
@@ -115,15 +71,12 @@ const Projects = () => {
                     <FiExternalLink size={20} />
                     <span className="hidden md:inline">Live</span>
                   </a>
-                  {project.caseStudy && (
-                    <a
-                      href={project.caseStudy}
-                      className="flex items-center space-x-2 text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors"
-                    >
-                      <FiFileText size={20} />
-                      <span className="hidden md:inline">Case Study</span>
-                    </a>
-                  )}
+                 {project.caseStudy && (
+                    <Link to={`/case-study/${index}`} className="flex items-center space-x-2 text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors">
+                        <FiFileText size={20} />
+                        <span className="hidden md:inline">Case Study</span>
+                    </Link>
+                )}
                 </div>
               </div>
             </motion.div>
