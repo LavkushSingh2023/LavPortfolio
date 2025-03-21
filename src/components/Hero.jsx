@@ -1,7 +1,7 @@
 // components/Hero.jsx
 import { motion } from 'framer-motion';
 import { FiGithub, FiLinkedin, FiFileText } from 'react-icons/fi';
-import { SiReact, SiNodedotjs, SiTailwindcss, SiMongodb } from 'react-icons/si';
+import { SiNodedotjs, SiTailwindcss, SiMongodb, SiReact } from 'react-icons/si';
 
 const Hero = () => {
   return (
@@ -69,13 +69,13 @@ const Hero = () => {
             <div className="flex gap-3">
               <a 
                 href="https://github.com/LavkushSingh2023" 
-                className="p-3 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors shadow-md hover:-translate-y-1 transform transition-all"
+                className="p-3 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors shadow-md hover:-translate-y-1 transform"
               >
                 <FiGithub className="text-xl" />
               </a>
               <a 
                 href="https://www.linkedin.com/in/lavkushsingh2023/" 
-                className="p-3 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors shadow-md hover:-translate-y-1 transform transition-all"
+                className="p-3 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors shadow-md hover:-translate-y-1 transform"
               >
                 <FiLinkedin className="text-xl" />
               </a>
@@ -120,7 +120,7 @@ const Hero = () => {
                 </div>
                 {/* Bottom Left */}
                 <div className="absolute bottom-0 left-0 transform -translate-x-1/2 translate-y-1/2">
-                   <SiMongodb className="text-3xl text-blue-600 dark:text-purple-400" />
+                  <SiMongodb className="text-3xl text-blue-600 dark:text-purple-400" />
                 </div>
                 {/* Bottom Right */}
                 <div className="absolute bottom-0 right-0 transform translate-x-1/2 translate-y-1/2">
