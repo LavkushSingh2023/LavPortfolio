@@ -14,34 +14,73 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
           className="w-full md:w-1/2 space-y-6 text-center md:text-left"
         >
-          <h1 className="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-blue-600 to-purple-500 bg-clip-text text-transparent">
+          <div className="relative inline-block">
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-blue-600 to-purple-500 bg-clip-text text-transparent"
+            >
+              Lavkush Singh
+              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-purple-500 mt-2 rounded-full" />
+            </motion.h1>
+          </div>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4 }}
+            className="text-2xl md:text-3xl font-medium text-gray-600 dark:text-gray-300"
+          >
             Full-Stack Developer
-          </h1>
-          <p className="text-lg text-gray-600 dark:text-gray-300">
+          </motion.p>
+
+          <motion.p 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6 }}
+            className="text-lg text-gray-600 dark:text-gray-400 max-w-md"
+          >
             Crafting scalable, high-performance web applications with modern technologies.
-          </p>
+          </motion.p>
           
-          <div className="flex justify-center md:justify-start gap-4">
-            <button onClick={() => {
-                        const link = document.createElement("a");
-                        link.href = "/LavResume.pdf"; // File path in `public/`
-                        link.download = "My_Resume.pdf"; // Suggested filename
-                        document.body.appendChild(link);
-                        link.click();
-                        document.body.removeChild(link);
-                    }}
-                className="bg-gradient-to-r from-blue-600 to-purple-500 text-white px-8 py-3 rounded-lg shadow-md hover:cursor-pointer hover:opacity-90 transition-opacity flex items-center gap-2">
-              <FiFileText /> Download CV
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.8 }}
+            className="flex justify-center md:justify-start gap-4"
+          >
+            <button 
+              onClick={() => {
+                const link = document.createElement("a");
+                link.href = "/LavResume.pdf";
+                link.download = "Lavkush_Singh_Resume.pdf";
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+              }}
+              className="group relative bg-gradient-to-r from-blue-600 to-purple-500 text-white px-8 py-3 rounded-lg shadow-md hover:cursor-pointer hover:shadow-lg transition-all flex items-center gap-2"
+            >
+              <FiFileText className="text-xl" />
+              <span>Download CV</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg -z-10" />
             </button>
+            
             <div className="flex gap-3">
-              <a href="https://github.com/LavkushSingh2023" className="p-3 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors shadow-md">
+              <a 
+                href="https://github.com/LavkushSingh2023" 
+                className="p-3 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors shadow-md hover:-translate-y-1 transform transition-all"
+              >
                 <FiGithub className="text-xl" />
               </a>
-              <a href="https://www.linkedin.com/in/lavkushsingh2023/" className="p-3 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors shadow-md">
+              <a 
+                href="https://www.linkedin.com/in/lavkushsingh2023/" 
+                className="p-3 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors shadow-md hover:-translate-y-1 transform transition-all"
+              >
                 <FiLinkedin className="text-xl" />
               </a>
             </div>
-          </div>
+          </motion.div>
         </motion.div>
 
         {/* Right Content */}
@@ -61,38 +100,35 @@ const Hero = () => {
             <img
               src="/LavPhoto.jpg"
               alt="Profile"
-              className="relative z-10 w-full h-full object-cover rounded-full border-4 border-white/20 dark:border-gray-800/20"
+              className="relative z-10 w-full h-full object-cover rounded-full border-4 border-white/20 dark:border-gray-800/20 shadow-xl"
             />
+            
+            {/* Rotating Icons Container */}
+            <div className="absolute inset-0">
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+                className="relative w-full h-full"
+              >
+                {/* Top Left */}
+                <div className="absolute top-0 left-0 transform -translate-x-1/2 -translate-y-1/2">
+                  <SiNodedotjs className="text-3xl text-blue-600 dark:text-purple-400" />                 
+                </div>
+                {/* Top Right */}
+                <div className="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2">
+                  <SiTailwindcss className="text-3xl text-blue-600 dark:text-purple-400" />
+                </div>
+                {/* Bottom Left */}
+                <div className="absolute bottom-0 left-0 transform -translate-x-1/2 translate-y-1/2">
+                   <SiMongodb className="text-3xl text-blue-600 dark:text-purple-400" />
+                </div>
+                {/* Bottom Right */}
+                <div className="absolute bottom-0 right-0 transform translate-x-1/2 translate-y-1/2">
+                  <SiReact className="text-3xl text-blue-600 dark:text-purple-400" />                  
+                </div>
+              </motion.div>
+            </div>
           </div>
-          {/* Floating Tech Icons */}
-          <motion.div
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-0 left-0 text-blue-500 text-4xl"
-          >
-            <SiReact />
-          </motion.div>
-          <motion.div
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute bottom-0 right-0 text-green-500 text-4xl"
-          >
-            <SiNodedotjs />
-          </motion.div>
-          <motion.div
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute bottom-0 left-0 text-cyan-500 text-4xl"
-          >
-            <SiTailwindcss />
-          </motion.div>
-          <motion.div
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-0 right-0 text-green-600 text-4xl"
-          >
-            <SiMongodb />
-          </motion.div>
         </motion.div>
       </div>
     </section>
