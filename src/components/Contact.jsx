@@ -121,7 +121,7 @@ const Contact = () => {
             <button
               type="submit"
               disabled={formik.isSubmitting}
-              className="w-full bg-gradient-to-r from-blue-600 to-purple-500 text-white py-4 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"
+              className="w-full bg-gradient-to-r from-blue-600 to-purple-500 text-white py-4 rounded-lg hover:opacity-90 hover:cursor-pointer transition-opacity flex items-center justify-center gap-2"
             >
               {formik.isSubmitting ? (
                 <>
